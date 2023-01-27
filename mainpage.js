@@ -4,10 +4,23 @@ function toTextConverter() {
 
 function updateFromDec() {
     document.getElementById("binField").value = document.getElementById("decField").value;
-    document.getElementById("decField").value = document.getElementById("decField").value;
+
+
+
     document.getElementById("octField").value = document.getElementById("decField").value;
+
+
+
     document.getElementById("hexField").value = document.getElementById("decField").value;
+
+
+
     document.getElementById("asciiField").value = document.getElementById("decField").value;
+
+
+
+
+
 }
 
 function updateFromBin() {
@@ -27,4 +40,4 @@ function updateFromASCII() {
 }
 
 document.getElementById("toTextConButton").addEventListener("click", toTextConverter);
-document.getElementById("decField").addEventListener("keyup", updateFromDec);
+document.getElementById("decField").addEventListener("blur", updateFromDec);
