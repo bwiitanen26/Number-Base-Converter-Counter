@@ -1,0 +1,11 @@
+{
+    "manifest_version": 3,
+    "name": "Base Converter/Counter",
+    "description": "An extension that can encrypt and decrypt messages using a caesar cipher",
+    "version": "1.0",
+    "author": "Brandon Wiitanen, Spencer Wiitanen",
+    "action": {
+        "default_popup": "index.html",
+        "default_title": "Base Converter"
+    }
+}
