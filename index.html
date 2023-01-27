@@ -6,6 +6,15 @@
   <meta name="viewport" content="width=device-width">
   <title>Base Converter</title>
   <style>
+    div {
+      display: flex;
+      justify-content: center;
+    }
+    body {
+      text-align: center;
+      width: 300px;
+      height: 360px;
+    }
     button {
       box-shadow: 0 5px black;
       cursor: pointer;
@@ -26,15 +35,32 @@
 
 <body>
   Base Converter Main Page
+
+
+  <div>
+    <p>Decimal:</p>
+    <input id = "decField"></textarea>
+  </div>
+  <div>
+    <p>Decimal:</p>
+    <input id = "binField"></textarea>
+  </div>
+  <div>
+    <p>Decimal:</p>
+    <input id = "octField"></textarea>
+  </div>
+  <div>
+    <p>Decimal:</p>
+    <input id = "hexField"></textarea>
+  </div>
+  <div>
+    <p>Decimal:</p>
+    <input id = "asciiField"></textarea>
+  </div>
+  
   <div>
     <button id="toTextConButton">Text Converter</button>  
   </div>
-
-  <div>
-    <textarea id = "decimalField" type="text"></textarea>
-  </div>
-  
-
 
   
   <script src="mainpage.js"></script>
