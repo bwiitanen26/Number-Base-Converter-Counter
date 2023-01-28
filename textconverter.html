@@ -12,25 +12,27 @@
       height: 360px;
     }
     button {
-      box-shadow: 0 5px black;
+      width: 150px;
+      height: 50px;
       cursor: pointer;
-      margin-bottom: 5px;
-      border-radius: 8px;
+      margin: 5px;
+      border-radius: 4px;
       font-size: 16px;
+      border: 1px black solid;
+      transition-duration: 0.3s;
     }
     button:hover {
-      background-color: lightgray;
+      background-color: rgb(200,200,200);
     }
     button:active {
-      background-color: lightgray;
-      box-shadow: 0 3px black;
-      transform: translateY(2px);
+      background-color: rgb(200,200,200);
     }
   </style>
 </head>
 
 <body>
-  Text Converter Page
+  <h1>Text Converter Page</h1>
+  
   <div>
     <button id="toMainPageButton">Main Page</button>   
   </div>
