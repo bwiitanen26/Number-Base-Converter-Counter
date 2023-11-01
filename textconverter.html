@@ -6,16 +6,26 @@
   <meta name="viewport" content="width=device-width">
   <title>Text Converter</title>
   <style>
+    div {
+      display: flex;
+    }
     body {
       text-align: center;
-      width: 250px;
+      width: 550px;
       height: 360px;
+    }
+    p {
+      margin: auto;
+    }
+    textarea {
+      margin: auto;
     }
     button {
       width: 150px;
       height: 50px;
       cursor: pointer;
-      margin: 5px;
+      margin: auto;
+      margin-top: 10px;
       border-radius: 4px;
       font-size: 16px;
       border: 1px black solid;
@@ -32,9 +42,20 @@
 
 <body>
   <h1>Text Converter Page</h1>
+
+  <div>
+    <p>Text</p>
+    <p>Binary</p>
+  </div>
+
+  <div>
+    <textarea id="textField" cols="30" rows="10"></textarea>
+    <textarea id="binField" cols="30" rows="10"></textarea>
+  </div>
   
   <div>
-    <button id="toMainPageButton">Main Page</button>   
+    <button id="toMainPageButton">Base Converter</button>
+    <button id="clearFieldsButton">Clear</button>
   </div>
   
 

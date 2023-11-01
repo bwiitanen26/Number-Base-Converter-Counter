@@ -5,7 +5,7 @@
     "version": "1.0",
     "author": "Brandon Wiitanen, Spencer Wiitanen",
     "action": {
-        "default_popup": "index.html",
+        "default_popup": "mainpage.html",
         "default_title": "Base Converter"
     }
 }
