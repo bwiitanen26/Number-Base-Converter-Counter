@@ -4,6 +4,9 @@
     "description": "An extension that can encrypt and decrypt messages using a caesar cipher",
     "version": "1.0",
     "author": "Brandon Wiitanen, Spencer Wiitanen",
+    "permissions": [
+        "storage"
+    ],
     "action": {
         "default_popup": "mainpage.html",
         "default_title": "Base Converter"

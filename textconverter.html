@@ -2,66 +2,66 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>Text Converter</title>
-  <style>
-    div {
-      display: flex;
-    }
-    body {
-      text-align: center;
-      width: 550px;
-      height: 360px;
-    }
-    p {
-      margin: auto;
-    }
-    textarea {
-      margin: auto;
-    }
-    button {
-      width: 150px;
-      height: 50px;
-      cursor: pointer;
-      margin: auto;
-      margin-top: 10px;
-      border-radius: 4px;
-      font-size: 16px;
-      border: 1px black solid;
-      transition-duration: 0.3s;
-    }
-    button:hover {
-      background-color: rgb(200,200,200);
-    }
-    button:active {
-      background-color: rgb(200,200,200);
-    }
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Text Converter</title>
+    <style>
+        div {
+            display: flex;
+        }
+        body {
+            text-align: center;
+            width: 550px;
+            height: 300px;
+        }
+        p {
+            margin: auto;
+        }
+        textarea {
+            margin: auto;
+        }
+        button {
+            width: 150px;
+            height: 50px;
+            cursor: pointer;
+            margin: auto;
+            margin-top: 10px;
+            border-radius: 4px;
+            font-size: 16px;
+            border: 1px black solid;
+            transition-duration: 0.3s;
+        }
+        button:hover {
+            background-color: rgb(200,200,200);
+        }
+        button:active {
+            background-color: rgb(200,200,200);
+        }
+    </style>
 </head>
 
 <body>
-  <h1>Text Converter Page</h1>
+    <h1>Text Converter Page</h1>
 
-  <div>
-    <p>Text</p>
-    <p>Binary</p>
-  </div>
+    <div>
+        <p>Text</p>
+        <p>Binary</p>
+    </div>
 
-  <div>
-    <textarea id="textField" cols="30" rows="10"></textarea>
-    <textarea id="binField" cols="30" rows="10"></textarea>
-  </div>
-  
-  <div>
-    <button id="toMainPageButton">Base Converter</button>
-    <button id="clearFieldsButton">Clear</button>
-  </div>
-  
+    <div>
+        <textarea id="textField" cols="30" rows="10"></textarea>
+        <textarea id="binTextField" cols="30" rows="10"></textarea>
+    </div>
+    
+    <div>
+        <button id="toMainPageButton">Base Converter</button>
+        <button id="clearFieldsButton">Clear</button>
+    </div>
+    
 
 
-  
-  <script src="textconverter.js"></script>
+    
+    <script src="textconverter.js"></script>
 </body>
 
 </html>
