@@ -1,5 +1,5 @@
 //ASCII Hashmap
-const ascii_codes = ["NULL", "SOH", "STX", "ETX", "EOT", "ENQ", "ACK", "BEL", "BS", "TAB", "LF", "VT", "FF", "CR", "SO", "SI", "DLE", "DC1", "DC2", "DC3", "DC4", "NAK", "SYN", "ETB", "CAN", "EM", "SUB", "ESC", "FS", "GS", "RS", "US", " ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ":", ";", "<", "=", ">", "?", "@", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "[", "\\", "]", "^", "_", "`", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "{", "|", "}", "~", "DEL"]
+const ascii_codes = ["NULL", "SOH", "STX", "ETX", "EOT", "ENQ", "ACK", "BEL", "BS", "TAB", "LF", "VT", "FF", "CR", "SO", "SI", "DLE", "DC1", "DC2", "DC3", "DC4", "NAK", "SYN", "ETB", "CAN", "EM", "SUB", "ESC", "FS", "GS", "RS", "US", " ", "!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ":", ";", "<", "=", ">", "?", "@", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "[", "\\", "]", "^", "_", "`", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "{", "|", "}", "~", "DEL"];
 
 /**
  * Retrieves all fields' information from Chrome Local Storage on page load
@@ -14,7 +14,7 @@ function getFields() {
 
 /**
  * Saves all fields on page to Chrome Local Storage
- * 
+ *
  * @param {Number} dec Content in the decimal field
  * @param {Number} bin Content in the binary field
  * @param {Number} oct Content in the octal field
@@ -42,7 +42,7 @@ function saveAllFields(dec, bin, oct, hex, ascii) {
     } else {
         localStorage.setItem("hex_field", hex);
     }
-    if ((document.getElementById("decField").value.length > 0) && (Number(document.getElementById("decField").value) < 128)) {
+    if (document.getElementById("decField").value.length > 0 && Number(document.getElementById("decField").value) < 128) {
         localStorage.setItem("ascii_field", ascii);
     } else {
         localStorage.setItem("ascii_field", "");
@@ -69,7 +69,7 @@ function clearFields() {
  * Changes page to text converter page
  */
 function toTextConverter() {
-    window.location.href = "textconverter.html"
+    window.location.href = "textconverter.html";
 }
 
 /**
@@ -89,12 +89,12 @@ function updateFromDec() {
     document.getElementById("octField").value = document.getElementById("decField").value.length > 0 ? oct_val : "";
 
     //Update Hex Field
-    let hex_val = Number(dec_val).toString(16);
+    let hex_val = Number(dec_val).toString(16).toUpperCase();
     document.getElementById("hexField").value = document.getElementById("decField").value.length > 0 ? hex_val : "";
 
     //Update ASCII Field
     let ascii_val = ascii_codes[Number(document.getElementById("decField").value)];
-    document.getElementById("asciiField").value = ((document.getElementById("decField").value.length > 0) && (Number(document.getElementById("decField").value) < 128)) ? ascii_val : "";
+    document.getElementById("asciiField").value = document.getElementById("decField").value.length > 0 && Number(document.getElementById("decField").value) < 128 ? ascii_val : "";
 
     saveAllFields(dec_val, bin_val, oct_val, hex_val, ascii_val);
 }
@@ -108,7 +108,7 @@ function updateFromBin() {
     document.getElementById("binField").value = bin_val;
 
     //Update Decimal Field
-    let dec_val = parseInt(bin_val,2);
+    let dec_val = parseInt(bin_val, 2);
     document.getElementById("decField").value = document.getElementById("binField").value.length > 0 ? dec_val : "";
 
     //Update Octal Field
@@ -116,12 +116,12 @@ function updateFromBin() {
     document.getElementById("octField").value = document.getElementById("decField").value.length > 0 ? oct_val : "";
 
     //Update Hex Field
-    let hex_val = Number(dec_val).toString(16);
+    let hex_val = Number(dec_val).toString(16).toUpperCase();
     document.getElementById("hexField").value = document.getElementById("decField").value.length > 0 ? hex_val : "";
 
     //Update ASCII Field
     let ascii_val = ascii_codes[Number(document.getElementById("decField").value)];
-    document.getElementById("asciiField").value = ((document.getElementById("decField").value.length > 0) && (Number(document.getElementById("decField").value) < 128)) ? ascii_val : "";
+    document.getElementById("asciiField").value = document.getElementById("decField").value.length > 0 && Number(document.getElementById("decField").value) < 128 ? ascii_val : "";
 
     saveAllFields(dec_val, bin_val, oct_val, hex_val, ascii_val);
 }
@@ -131,24 +131,24 @@ function updateFromBin() {
  */
 function updateFromOct() {
     //Constraint (only allow digits 1-8)
-    let oct_val = document.getElementById("octField").value.replace(/[^0-8]/g, "")
+    let oct_val = document.getElementById("octField").value.replace(/[^0-8]/g, "");
     document.getElementById("octField").value = oct_val;
 
     //Update Decimal Field
-    let dec_val = parseInt(oct_val,8);
+    let dec_val = parseInt(oct_val, 8);
     document.getElementById("decField").value = document.getElementById("octField").value.length > 0 ? dec_val : "";
-    
+
     //Update Binary Field
     let bin_val = Number(dec_val).toString(2);
     document.getElementById("binField").value = document.getElementById("decField").value.length > 0 ? bin_val : "";
 
     //Update Hex Field
-    let hex_val = Number(dec_val).toString(16);
+    let hex_val = Number(dec_val).toString(16).toUpperCase();
     document.getElementById("hexField").value = document.getElementById("decField").value.length > 0 ? hex_val : "";
 
     //Update ASCII Field
     let ascii_val = ascii_codes[Number(document.getElementById("decField").value)];
-    document.getElementById("asciiField").value = ((document.getElementById("decField").value.length > 0) && (Number(document.getElementById("decField").value) < 128)) ? ascii_val : "";
+    document.getElementById("asciiField").value = document.getElementById("decField").value.length > 0 && Number(document.getElementById("decField").value) < 128 ? ascii_val : "";
 
     saveAllFields(dec_val, bin_val, oct_val, hex_val, ascii_val);
 }
@@ -158,11 +158,14 @@ function updateFromOct() {
  */
 function updateFromHex() {
     //Constraint (only characters 0-F)
-    let hex_val = document.getElementById("hexField").value.replace(/[^0-9A-Fa-f]/g, "");
+    let hex_val = document
+        .getElementById("hexField")
+        .value.replace(/[^0-9A-Fa-f]/g, "")
+        .toUpperCase();
     document.getElementById("hexField").value = hex_val;
 
     //Update Decimal Field
-    let dec_val = parseInt(hex_val,16);
+    let dec_val = parseInt(hex_val, 16);
     document.getElementById("decField").value = document.getElementById("hexField").value.length > 0 ? dec_val : "";
 
     //Update Binary Field
@@ -175,7 +178,7 @@ function updateFromHex() {
 
     //Update ASCII Field
     let ascii_val = ascii_codes[Number(document.getElementById("decField").value)];
-    document.getElementById("asciiField").value = ((document.getElementById("decField").value.length > 0) && (Number(document.getElementById("decField").value) < 128)) ? ascii_val : "";
+    document.getElementById("asciiField").value = document.getElementById("decField").value.length > 0 && Number(document.getElementById("decField").value) < 128 ? ascii_val : "";
 
     saveAllFields(dec_val, bin_val, oct_val, hex_val, ascii_val);
 }
@@ -188,9 +191,9 @@ function updateFromASCII() {
     document.getElementById("asciiField").value = ascii_val;
 
     //Update Decimal Field
-    let dec_val = Number(ascii_codes.indexOf(document.getElementById("asciiField").value))
-    let in_table = ascii_codes.indexOf(document.getElementById("asciiField").value) != -1 ? true : false
-    document.getElementById("decField").value = ((document.getElementById("asciiField").value.length > 0) && (in_table == true)) ? dec_val : "";
+    let dec_val = Number(ascii_codes.indexOf(document.getElementById("asciiField").value));
+    let in_table = ascii_codes.indexOf(document.getElementById("asciiField").value) != -1 ? true : false;
+    document.getElementById("decField").value = document.getElementById("asciiField").value.length > 0 && in_table == true ? dec_val : "";
 
     //Update Binary Field
     let bin_val = Number(dec_val).toString(2);
@@ -201,7 +204,7 @@ function updateFromASCII() {
     document.getElementById("octField").value = document.getElementById("decField").value.length > 0 ? oct_val : "";
 
     //Update Hex Field
-    let hex_val = Number(dec_val).toString(16);
+    let hex_val = Number(dec_val).toString(16).toUpperCase();
     document.getElementById("hexField").value = document.getElementById("decField").value.length > 0 ? hex_val : "";
 
     saveAllFields(dec_val, bin_val, oct_val, hex_val, ascii_val);

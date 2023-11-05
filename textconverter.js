@@ -1,5 +1,5 @@
 //ASCII Hashmap
-const ascii_codes = ["NULL", "SOH", "STX", "ETX", "EOT", "ENQ", "ACK", "BEL", "BS", "TAB", "LF", "VT", "FF", "CR", "SO", "SI", "DLE", "DC1", "DC2", "DC3", "DC4", "NAK", "SYN", "ETB", "CAN", "EM", "SUB", "ESC", "FS", "GS", "RS", "US", " ", "!", "\"", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ":", ";", "<", "=", ">", "?", "@", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "[", "\\", "]", "^", "_", "`", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "{", "|", "}", "~", "DEL"]
+const ascii_codes = ["NULL", "SOH", "STX", "ETX", "EOT", "ENQ", "ACK", "BEL", "BS", "TAB", "LF", "VT", "FF", "CR", "SO", "SI", "DLE", "DC1", "DC2", "DC3", "DC4", "NAK", "SYN", "ETB", "CAN", "EM", "SUB", "ESC", "FS", "GS", "RS", "US", " ", "!", '"', "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", ".", "/", "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", ":", ";", "<", "=", ">", "?", "@", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "[", "\\", "]", "^", "_", "`", "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "{", "|", "}", "~", "DEL"];
 
 /**
  * Main function that runs on page loadup
@@ -40,9 +40,9 @@ function updateFromText() {
         }
         result += char_binary + " ";
     }
-    document.getElementById("binTextField").value = content.length > 0 ? result.slice(0,-1) : "";
+    document.getElementById("binTextField").value = content.length > 0 ? result.slice(0, -1) : "";
     localStorage.setItem("text_field", content);
-    localStorage.setItem("bin_text_field", result.slice(0,-1))
+    localStorage.setItem("bin_text_field", result.slice(0, -1));
 }
 
 /**
@@ -53,9 +53,9 @@ function updateFromBinText() {
     document.getElementById("binTextField").value = content;
     content = content.replace(/\s/g, "");
     result = "";
-    for (let i = 0; i < content.length; i+=8) {
-        bin_val = content.substring(i,i+8);
-        dec_val = parseInt(bin_val,2);
+    for (let i = 0; i < content.length; i += 8) {
+        bin_val = content.substring(i, i + 8);
+        dec_val = parseInt(bin_val, 2);
         result += ascii_codes[dec_val];
     }
     document.getElementById("textField").value = content.length > 0 ? result : "";
