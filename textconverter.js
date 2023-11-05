@@ -49,7 +49,7 @@ function updateFromText() {
  * Updates the left text field box with text converted from binary placed in the right binary field box
  */
 function updateFromBinText() {
-    content = document.getElementById("binTextField").value.replace(/[^0-1]/g, "");
+    content = document.getElementById("binTextField").value.replace(/[^0-1]s/g, "");
     document.getElementById("binTextField").value = content;
     content = content.replace(/\s/g, "");
     result = "";

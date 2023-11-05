@@ -8,16 +8,37 @@
             div {
                 display: flex;
             }
+            .buttons {
+                margin: auto;
+                width: 325px;
+            }
             body {
                 text-align: center;
                 width: 550px;
-                height: 300px;
+                height: 310px;
+                background-color: rgb(30, 30, 30);
             }
-            p {
+            h1 {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                color: rgb(190, 190, 190);
+            }
+            h2 {
                 margin: auto;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                color: rgb(190, 190, 190);
+                margin-bottom: 5px;
             }
             textarea {
                 margin: auto;
+                height: 167px;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                color: rgb(30, 30, 30);
+                border-radius: 4px;
+            }
+            textarea:focus {
+                outline: none;
+                box-shadow: 0 0 0 3px rgb(190, 190, 190);
+                transition: box-shadow 0.3s ease;
             }
             button {
                 width: 150px;
@@ -27,8 +48,11 @@
                 margin-top: 10px;
                 border-radius: 4px;
                 font-size: 16px;
+                color: rgb(30, 30, 30);
+                background-color: rgb(190, 190, 190);
                 border: 1px black solid;
                 transition-duration: 0.3s;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
             }
             button:hover {
                 background-color: rgb(200, 200, 200);
@@ -40,11 +64,11 @@
     </head>
 
     <body>
-        <h1>Text Converter Page</h1>
+        <h1>Text Converter</h1>
 
         <div>
-            <p>Text</p>
-            <p>Binary</p>
+            <h2>Text</h2>
+            <h2>Binary</h2>
         </div>
 
         <div>
@@ -52,7 +76,7 @@
             <textarea id="binTextField" cols="30" rows="10"></textarea>
         </div>
 
-        <div>
+        <div class="buttons">
             <button id="toMainPageButton">Base Converter</button>
             <button id="clearFieldsButton">Clear</button>
         </div>
