@@ -1,7 +1,7 @@
 {
 	"manifest_version": 3,
 	"name": "All-in-One Base Converter",
-	"description": "Converts to and from different numeric bases, as well as ASCII; additionally features text/binary converter.",
+	"description": "Converts to and from several numeric bases, as well as ASCII; additionally features text/binary converter.",
 	"version": "1.0",
 	"author": "Brandon Wiitanen, Spencer Wiitanen",
 	"permissions": ["storage"],
