@@ -1,86 +1,124 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <title>Text Converter</title>
-        <style>
-            div {
-                display: flex;
-            }
-            .buttons {
-                margin: auto;
-                width: 325px;
-            }
-            body {
-                text-align: center;
-                width: 550px;
-                height: 310px;
-                background-color: rgb(30, 30, 30);
-            }
-            h1 {
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                color: rgb(190, 190, 190);
-            }
-            h2 {
-                margin: auto;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                color: rgb(190, 190, 190);
-                margin-bottom: 5px;
-            }
-            textarea {
-                margin: auto;
-                height: 167px;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-                color: rgb(30, 30, 30);
-                border-radius: 4px;
-            }
-            textarea:focus {
-                outline: none;
-                box-shadow: 0 0 0 3px rgb(190, 190, 190);
-                transition: box-shadow 0.3s ease;
-            }
-            button {
-                width: 150px;
-                height: 50px;
-                cursor: pointer;
-                margin: auto;
-                margin-top: 10px;
-                border-radius: 4px;
-                font-size: 16px;
-                color: rgb(30, 30, 30);
-                background-color: rgb(190, 190, 190);
-                border: 1px black solid;
-                transition-duration: 0.3s;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
-            }
-            button:hover {
-                background-color: rgb(200, 200, 200);
-            }
-            button:active {
-                background-color: rgb(200, 200, 200);
-            }
-        </style>
-    </head>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+		<title>Text Converter</title>
+		<style>
+			.textareas {
+				display: flex;
+				margin-bottom: 0px;
+			}
+			.textarea-names {
+				display: flex;
+			}
+			.buttons {
+				margin: auto;
+				width: 325px;
+			}
+			body {
+				text-align: center;
+				width: 550px;
+				height: 345px;
+				background-color: #051014;
+			}
+			h1 {
+				font-family: Verdana, Geneva, Tahoma, sans-serif;
+				color: #cddddd;
+			}
+			h2 {
+				margin: auto;
+				font-family: Verdana, Geneva, Tahoma, sans-serif;
+				color: #cddddd;
+				margin-bottom: 5px;
+			}
+			textarea {
+				margin: auto;
+				height: 167px;
+				width: 250px;
+				font-family: Verdana, Geneva, Tahoma, sans-serif;
+				color: #051014;
+				background-color: #e8e9eb;
+				border-top-right-radius: 4px;
+				border-top-left-radius: 4px;
+				resize: none;
+				border: 1px solid #051014;
+			}
+			textarea:focus {
+				outline: none;
+				box-shadow: 0 0 0 3px #cddddd;
+				transition: box-shadow 0.3s ease;
+			}
+			button {
+				cursor: pointer;
+				margin-top: 10px;
+				border-radius: 4px;
+				font-size: 16px;
+				color: #051014;
+				background-color: rgb(190, 190, 190);
+				border: 1px black solid;
+				transition-duration: 0.1s;
+				font-family: Verdana, Geneva, Tahoma, sans-serif;
+			}
+			button:hover {
+				background-color: rgb(180, 180, 180);
+			}
+			button:active {
+				background-color: rgb(138, 210, 38);
+				transform: scale(0.97);
+			}
+			.textarea-copy-buttons {
+				display: flex;
+			}
+			.copybuttons {
+				margin-top: -1px;
+				width: 256px;
+				height: 40px;
+				border-bottom-left-radius: 4px;
+				border-bottom-right-radius: 4px;
+				border-top-left-radius: 0px;
+				border-top-right-radius: 0px;
+			}
+			.textCopyButton {
+				margin-left: 10px;
+				margin-right: 19px;
+			}
+			.regularbuttons {
+				width: 150px;
+				height: 50px;
+			}
+			.buttons {
+				display: flex;
+				justify-content: center;
+				gap: 20px;
+			}
+		</style>
+	</head>
 
-    <body>
-        <h1>Text Converter</h1>
+	<body>
+		<h1>Text Converter</h1>
 
-        <div>
-            <h2>Text</h2>
-            <h2>Binary</h2>
-        </div>
+		<div class="textarea-names">
+			<h2>Text</h2>
+			<h2>Binary</h2>
+		</div>
 
-        <div>
-            <textarea id="textField" cols="30" rows="10"></textarea>
-            <textarea id="binTextField" cols="30" rows="10"></textarea>
-        </div>
+		<div class="textareas">
+			<textarea id="textField" cols="30" rows="10"></textarea>
+			<textarea id="binTextField" cols="30" rows="10"></textarea>
+		</div>
 
-        <div class="buttons">
-            <button id="toMainPageButton">Base Converter</button>
-            <button id="clearFieldsButton">Clear</button>
-        </div>
+		<div class="textarea-copy-buttons">
+			<button class="copybuttons textCopyButton" id="copyTextButton"><i class="material-icons">content_copy</i></button>
+			<button class="copybuttons binaryCopyButton" id="copyBinaryButton"><i class="material-icons">content_copy</i></button>
+		</div>
 
-        <script src="textconverter.js"></script>
-    </body>
+		<div class="buttons">
+			<button class="regularbuttons toMainPageButton" id="toMainPageButton">Base Converter</button>
+			<button class="regularbuttons clearFieldsButton" id="clearFieldsButton">Clear</button>
+		</div>
+
+		<script src="textconverter.js"></script>
+	</body>
 </html>
